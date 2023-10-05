@@ -45,15 +45,6 @@ $routes->post('/enviarlogin','Login_controller::auth');
 $routes->get('/panel', 'Panel_controller::index',['filter' => 'auth']);
 $routes->get('/logout', 'Login_controller::logout');
 
-// Ruta para mostrar el formulario de recuperación de contraseña
-$routes->get('recuperar_contra', 'Pass_Recovery_Controller::mostrarFormulario', ['as' => 'recuperar_contra']);
-// Ruta para procesar el formulario de recuperación de contraseña
-$routes->post('enviar-recuperacion', 'Pass_Recovery_Controller::enviarRecuperacion', ['as' => 'enviar-recuperacion']);
-// Ruta para mostrar el formulario de restablecimiento de contraseña
-$routes->get('restablecer-contraseña/(:any)', 'PasswordRecoveryController::mostrarFormularioRestablecimiento/$1', ['as' => 'restablecer-contraseña']);
-// Ruta para procesar el formulario de restablecimiento de contraseña
-$routes->post('restablecer-contraseña', 'PasswordRecoveryController::restablecerContraseña', ['as' => 'restablecer-contraseña']);
-
 
 /*
  * --------------------------------------------------------------------
